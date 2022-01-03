@@ -6,6 +6,7 @@
 package Clases;
 
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Operario extends Usuario {
     }
     
     public void RegistrarAlumno(Alumno alumno){
-        
+       
     }
     @Override
     public String toString() {

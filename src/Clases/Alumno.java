@@ -32,10 +32,12 @@ public class Alumno extends Usuario {
   
   
     public void SolicitarContraseña(){
-         
+             System.out.println("--------------------------------------------");
+             System.out.println("Su contraseña es : "+getContraseña());
+             System.out.println("--------------------------------------------");
     }
     public void CambiarContraseña(String nuevaContraseña){
-          
+              
     }
 
     public int getDNI() {
@@ -45,7 +47,7 @@ public class Alumno extends Usuario {
     public String getCorreo() {
         return correo;
     }
-
+    
     @Override
     public String toString() {
         return "Alumno{" + "DNI=" + DNI + ", correo=" + correo + ", contraseña="+ this.getContraseña()+", codigo=" + this.getCodigo() + ", apellidos=" + this.getApellidos() + ", nombres=" + this.getNobmres()+ '}';
