@@ -17,7 +17,7 @@ public class ArregloTurno {
     
     public ArregloTurno() {
         this.indice = 0;
-        this.TurnoA = new Turno[4];
+        this.TurnoA = new Turno[4]; //De momento lo coloco como 4, considerandolo diario (4 turnos por dia o por nivel)
         
     }
 
@@ -30,6 +30,11 @@ public class ArregloTurno {
     }
     public boolean agergarTurno(Turno turno){
         boolean result=false;
+        
+        this.TurnoA[this.indice]= turno;
+        this.indice++;
+        
+        
         
         result=true;
         

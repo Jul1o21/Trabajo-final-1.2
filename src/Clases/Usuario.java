@@ -22,6 +22,14 @@ public abstract class Usuario {
         this.codigo = codigo;
     }
 
+    public Usuario(String contrasena, String codigo) {//Para validar al usuario necesitaremos la contraseña y el codidgo
+        this.contrasena = contrasena;
+        this.codigo = codigo;
+    }
+
+    
+    
+
     public String getContraseña() {
         return contrasena;
     }
@@ -42,15 +50,13 @@ public abstract class Usuario {
         this.contrasena = contrasena;
     }
     
-    public boolean logearse(String codigo, String contraseña){
-        boolean result = false;   
-        
-        
-        System.out.println("\nEntrada exitosa, el usuario existe en los registros");  
-        
-        result = true;
-        
-        return result;
+    public boolean logearse(String contrasena,String codigo, ArregloAlumnos alumnosRegistrados){
+     return alumnosRegistrados.verificaralumno(contrasena,codigo);
+    }
+
+    
+    public Alumno mostrarAlumno(String codigo, ArregloAlumnos alumnosRegistrados){
+     return alumnosRegistrados.devolveralumno(codigo);
     }
     
     

@@ -25,6 +25,13 @@ public class Alumno extends Usuario {
         
     }
 
+ 
+    public Alumno(String contrasena, String codigo) {
+        super(contrasena, codigo);
+    }
+  
+    
+
     public int getDNI() {
         return DNI;
     }

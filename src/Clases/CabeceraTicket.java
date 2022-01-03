@@ -17,9 +17,12 @@ public class CabeceraTicket { //Arreglo de Tickets
     private Turno turno;
     private Alimento alimento;
     private Fecha fecha;
+    private int indice;
     
-    public CabeceraTicket(Ticket[] TicketA, Nivel nivel, Turno turno, Alimento alimento, Fecha fecha) {
-        this.TicketA = TicketA;
+    
+    public CabeceraTicket(int canttickets, Nivel nivel, Turno turno, Alimento alimento, Fecha fecha) {
+        this.indice = 0;
+        this.TicketA = new Ticket[canttickets];
         this.nivel = nivel;
         this.turno = turno;
         this.alimento = alimento;

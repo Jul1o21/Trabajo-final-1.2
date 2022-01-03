@@ -14,10 +14,31 @@ public class Sistema {
     public static int racionestotalesporturno=20;
     private ArregloFecha fechasSistema;
     private ArregloTurno turnosSistema;
+    private ArregloAlumnos alumnosRegistrados;
 
-    public Sistema(boolean estadohabilitado) {
+    public Sistema(boolean estadohabilitado, ArregloFecha fechasSistema, ArregloTurno turnosSistema, ArregloAlumnos alumnosRegistrados) {
         this.estadohabilitado = estadohabilitado;
+        this.fechasSistema = fechasSistema;
+        this.turnosSistema = turnosSistema;
+        this.alumnosRegistrados = alumnosRegistrados;
     }
+    
+    
+    
+    
+    public ArregloFecha getFechasSistema() {
+        return fechasSistema;
+    }
+
+    public ArregloTurno getTurnosSistema() {
+        return turnosSistema;
+    }
+
+    public ArregloAlumnos getAlumnosRegistrados() {
+        return alumnosRegistrados;
+    }
+    
+    
 
     public void setEstadohabilitado(boolean estadohabilitado) {
         this.estadohabilitado = estadohabilitado;
@@ -28,4 +49,4 @@ public class Sistema {
     }
     
     
-}
+}   

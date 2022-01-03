@@ -16,7 +16,7 @@ public class ArregloAlumnos {
     private int indice;
 
     public ArregloAlumnos(int cantidadalumnos) {
-        
+      
         this.indice = 0;
         this.AlumnoA = new Alumno[cantidadalumnos];
     }
@@ -29,10 +29,41 @@ public class ArregloAlumnos {
         return indice;
     }
     
-    public boolean agregarAlumno(){
+    public boolean agregarAlumno(Alumno alumno){
         boolean result=false;
         
-        result=true;
+        
+        this.AlumnoA[this.indice] = alumno;  
+        this.indice++;
+        result= true;
+        
+        
+        return result;
+        
+        
+        /*
+        */
+    }
+    public boolean verificaralumno(String contrasena,String codigo){
+        boolean result=false;
+          for (int i=0;i<this.indice;i++){
+            if (this.AlumnoA[i].getCodigo().equals(codigo)&&this.AlumnoA[i].getContraseña().equals(contrasena)){
+                result = true;
+                
+                break;
+            }               
+        }
+            return result;
+    }
+    
+    public Alumno devolveralumno(String codigo){
+        Alumno result=null; 
+        for (int i=0;i<this.indice;i++){
+            if (this.AlumnoA[i].getCodigo().equalsIgnoreCase(codigo)){
+                result = AlumnoA[i];
+                break;
+            }               
+        }
         return result;
     }
     

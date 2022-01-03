@@ -17,8 +17,20 @@ public class ArregloFecha {
     
     public ArregloFecha() {
         this.indice = 0;
-        this.FechaA = new Fecha[7];  //7 dias representan las 7 fechas 
+        this.FechaA = new Fecha[7];  //de momento 7, ya que una fecha representara un dia de la semana
                 
+    }
+    
+    public boolean agregarFecha(Fecha fecha ){
+        boolean result=false;
+                
+        this.FechaA[this.indice]= fecha;
+        this.indice++;
+        
+                
+        result = true;
+        
+        return result;
     }
 
     @Override
