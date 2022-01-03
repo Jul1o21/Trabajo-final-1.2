@@ -10,10 +10,10 @@ package Clases;
  * @author cubas
  */
 public abstract class Usuario {
-    private String contrasena;
-    private String nombres;
-    private String apellidos;
-    private String codigo; 
+    protected String contrasena;
+    protected String nombres;
+    protected String apellidos;
+    protected String codigo; 
 
     public Usuario(String contrasena, String nombres, String apellidos, String codigo) {
         this.contrasena = contrasena;

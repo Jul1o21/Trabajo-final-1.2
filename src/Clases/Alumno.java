@@ -37,7 +37,7 @@ public class Alumno extends Usuario {
              System.out.println("--------------------------------------------");
     }
     public void CambiarContraseña(String nuevaContraseña){
-              
+              this.contrasena = nuevaContraseña;
     }
 
     public int getDNI() {
