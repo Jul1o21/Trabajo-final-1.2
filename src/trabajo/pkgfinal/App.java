@@ -118,7 +118,7 @@ public class App {
              System.out.println("Usted es un alumno, y no esta registrado");
          }
            
-        
+       
         
          
          

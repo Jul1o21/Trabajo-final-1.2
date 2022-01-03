@@ -30,7 +30,13 @@ public class Alumno extends Usuario {
         super(contrasena, codigo);
     }
   
-    
+  
+    public void SolicitarContraseña(){
+         
+    }
+    public void CambiarContraseña(String nuevaContraseña){
+          
+    }
 
     public int getDNI() {
         return DNI;
