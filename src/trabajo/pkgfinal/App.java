@@ -96,10 +96,12 @@ public class App {
          
          String codigo;
          String contraseña;
+         System.out.println("------------------------------------------------");
          System.out.println("Ingrese su codigo: ");
          codigo = teclado.nextLine();      
          System.out.println("Ingrese su contraseña: ");
          contraseña = teclado.nextLine();
+         System.out.println("------------------------------------------------");
   
          Alumno alumnotest; //La clase alumnotest, servira para crearse con un constructor que solo requiere contraseña  y codigo para poder usar el metodo que esta en usuario llamado logearse
          
