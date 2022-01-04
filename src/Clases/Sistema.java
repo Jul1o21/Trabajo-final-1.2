@@ -15,12 +15,14 @@ public class Sistema {
     private ArregloFecha fechasSistema;
     private ArregloTurno turnosSistema;
     private ArregloAlumnos alumnosRegistrados;
-
-    public Sistema(boolean estadohabilitado, ArregloFecha fechasSistema, ArregloTurno turnosSistema, ArregloAlumnos alumnosRegistrados) {
+    private Operario operario;
+    
+    public Sistema(boolean estadohabilitado, ArregloFecha fechasSistema, ArregloTurno turnosSistema, ArregloAlumnos alumnosRegistrados,Operario operario) {
         this.estadohabilitado = estadohabilitado;
         this.fechasSistema = fechasSistema;
         this.turnosSistema = turnosSistema;
         this.alumnosRegistrados = alumnosRegistrados;
+        this.operario = operario;
     }
     
     
@@ -37,6 +39,10 @@ public class Sistema {
     public ArregloAlumnos getAlumnosRegistrados() {
         return alumnosRegistrados;
     }
+
+    public static int getRacionestotalesporturno() {
+        return racionestotalesporturno;
+    }
     
     
 
@@ -48,5 +54,13 @@ public class Sistema {
         Sistema.racionestotalesporturno = racionestotalesporturno;
     }
     
+    public boolean validarlogdeoperario(String codigoop,String contrasenaop){
+        boolean result=false;
+        if (this.operario.getCodigo().equals(codigoop)&&this.operario.getContraseña().equals(contrasenaop)){
+                result = true;
     
+            }               
+        
+        return result;
+    }
 }   

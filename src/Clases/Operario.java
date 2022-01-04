@@ -20,20 +20,33 @@ public class Operario extends Usuario {
         this.entrada = entrada;
     }
 
+    public Operario(String contrasena, String codigo) { //Esto se usara para verificar si el operario esta registrado
+        super(contrasena, codigo);
+    }
+    
+    
     public Date getEntrada() {
         return entrada;
     }
-
+    
+    public void cambiarracionesporturno(int nuevacantidad){
+        Sistema.racionestotalesporturno = nuevacantidad;
+        
+    }
     public void setEntrada(Date entrada) {
         this.entrada = entrada;
     }
     
-    public void RegistrarAlumno(Alumno alumno){
+    public void RegistrarAlumno(Alumno alumno, ArregloAlumnos alumnos){
+       
+       alumnos.agregarAlumno(alumno);
        
     }
+    
+    
     @Override
     public String toString() {
-        return "Operario{" + "entrada=" + entrada + '}';
+        return "Operario{" + "entrada=" + entrada + "contraseña="+ this.getContraseña()+", codigo=" + this.getCodigo() + ", apellidos=" + this.getApellidos() + ", nombres=" + this.getNobmres()+'}';
     }
     
     
