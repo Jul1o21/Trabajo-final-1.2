@@ -21,19 +21,7 @@ public class App {
     public static void main(String[] args) {
 
         Scanner teclado = new Scanner(System.in);
-
-        /*COMENTARIOS ENTRE NOSOSTROS EN ESTA ZONA
-         
-         Commit 1 y 2 Julio 
-         
-         El sistema es semanal = los turnos de los tickets se crean para toda la semana
-         
-         
-         
-         //Comentario para comprobar el github
-         
-         
-         */
+        
         //TODO LO QUE SE ESTA ELABORANDO HASTA AHORA ES TEMPORAL Y ESTA SUJETA A CAMBIOS, SOLO ES PARA PROBAR EL PROGRAMA 
         System.out.println("\n\nProbando Sistema, de momento se crean 3 alumnos registrados automaticamente, luego"
                 + "\nse puede colocar un codigo y contraseña para validar si ese alumno esta en los registros");
@@ -49,8 +37,7 @@ public class App {
         //Se crea el sistema
         //..............
         Sistema sistema;
-
-        //..............       
+   
         //Se crean las clases que necesita el sistema, las cuales son: 
         ArregloFecha fechasSistema;
         ArregloTurno turnosSistema;
