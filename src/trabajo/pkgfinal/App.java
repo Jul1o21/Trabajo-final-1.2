@@ -85,27 +85,25 @@ public class App {
         int op1;
         System.out.println("Digite 1 si es un alumno o 2 si es un Operario, 3 para cerrar sesion y 4 para salir del sistema");
         op1 = teclado.nextInt();
-        if(op1!=3&&op1!=4){
-        String codigo;
-        String contraseña;
-        System.out.println("------------------------------------------------");
-        System.out.println("Ingrese su codigo: ");
-        codigo = teclado.next();
-
-        System.out.println("Ingrese su contraseña: ");
-        contraseña = teclado.next();
-        System.out.println("------------------------------------------------");
-        }
-            String codigo;   //ESTO GENERA OTRO ERROR
+        if (op1 != 3 && op1 != 4) {
+            String codigo;
             String contraseña;
-            codigo = null;
-            contraseña = null;
-             
-       
+            System.out.println("------------------------------------------------");
+            System.out.println("Ingrese su codigo: ");
+            codigo = teclado.next();
+
+            System.out.println("Ingrese su contraseña: ");
+            contraseña = teclado.next();
+            System.out.println("------------------------------------------------");
+        }
+        String codigo;   //ESTO GENERA OTRO ERROR
+        String contraseña;
+        codigo = null;
+        contraseña = null;
+
         do {
 
             switch (op1) {
-               
 
                 case 2://Operario
 
@@ -187,11 +185,11 @@ public class App {
                                 alimento = new Alimento(alimentoname);
 
                                 CabeceraTicket ticketsgeneradosporop;
-                               // ticketsgeneradosporop = new CabeceraTicket(333, nivel, turno, alimento, fechagenerada);
+                                // ticketsgeneradosporop = new CabeceraTicket(333, nivel, turno, alimento, fechagenerada);
                                 ticketsgeneradosporop = fechagenerada.creartickets(nivel, turno, alimento, fechagenerada);
-                                
+
                                 sistema.setTicketscreadosconfecha(ticketsgeneradosporop);
-                                
+
                                 System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                 System.out.println(ticketsgeneradosporop);
                                 System.out.println("\n----------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -230,9 +228,8 @@ public class App {
                     System.out.println("ADIOS");
                     System.exit(0);
                     break;
-                    
-                    
-                 case 1: //Alumno
+
+                case 1: //Alumno
                     int opa;
 
                     Alumno alumnotest; //La clase alumnotest, servira para crearse con un constructor que solo requiere contraseña  y codigo para poder usar el metodo que esta en usuario llamado logearse
@@ -243,7 +240,7 @@ public class App {
 
                         System.out.println("Usted es un alumno, y si esta registrado");
                         System.out.println("El alumno es: ");
-                            
+
                         System.out.println(alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados()));
                         alumnotest = alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados());
                         System.out.println();
@@ -255,12 +252,11 @@ public class App {
                     opa = teclado.nextInt();
                     switch (opa) {  //Menu del alumno
                         case 1:
-                            
+
                             sistema.asignarticket(alumnotest);
-                            
+
                             System.out.println(sistema.getTicketscreadosconfecha());
-                            
-                            
+
                             break;
 
                         case 0:
