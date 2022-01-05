@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Clases;
-
+import Clases.ArregloAlumnos;
 /**
  *
  * @author cubas
@@ -50,7 +50,14 @@ public class Alumno extends Usuario {
     
     @Override
     public String toString() {
-        return "Alumno{" + "DNI=" + DNI + ", correo=" + correo + ", contraseña="+ this.getContraseña()+", codigo=" + this.getCodigo() + ", apellidos=" + this.getApellidos() + ", nombres=" + this.getNobmres()+ '}';
+        return "Alumno{"+"\n"+ "DNI=" + DNI + "\n"+ 
+                "correo=" + correo + "\n"+ 
+                "contraseña="+ this.getContraseña()+ "\n"+ 
+                "codigo=" + this.getCodigo() + "\n"+ 
+                "apellidos=" + this.getApellidos() + "\n"+ 
+                "nombres=" + this.getNobmres()+ "\n"+ 
+                "-------------------------------------------------"+ "\n"+
+                '}';
     }
     
     

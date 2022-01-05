@@ -25,7 +25,7 @@ public class App {
         //TODO LO QUE SE ESTA ELABORANDO HASTA AHORA ES TEMPORAL Y ESTA SUJETA A CAMBIOS, SOLO ES PARA PROBAR EL PROGRAMA 
         System.out.println("\n\nProbando Sistema, de momento se crean 3 alumnos registrados automaticamente, luego"
                 + "\nse puede colocar un codigo y contraseña para validar si ese alumno esta en los registros");
-
+        System.out.println("----------------------------------------------------------------------------------------");
         Date fechatest;
         fechatest = new Date();
         Facultad facultadtest;  //La clase facultad le pertenece a la clase alumno
@@ -63,14 +63,17 @@ public class App {
 
         //Terminamos de crear el sistema
         sistema = new Sistema(true, fechasSistema, turnosSistema, alumnosRegistrados, operarioregistradounico);
-
-        System.out.println("Los alumnos que tiene el sistema son:\n" + alumnosRegistrados);
-        System.out.println("El operio de este sistema es:\n" + operarioregistradounico);
+        
+        System.out.println("------------------------------------------------------------------------------------------------");
+        System.out.println("\tLos alumnos que tiene el sistema son:\n" + alumnosRegistrados);
+        System.out.println("************************************************************************************************");
+        System.out.println("\tEl operario de este sistema es:\n" + operarioregistradounico);
+        System.out.println("------------------------------------------------------------------------------------------------");
         //Ahora que ya creamos el sistema, con sus arreglos adentro, pasamos a la parte de logearse 
 
         //Menu para seleccionar si se trata de un usuario o un operario
         int op1;
-        System.out.println("Digite 1 si es un alumno o 2 si es un Operario, 3 para cerrar sesion y 4 para salir del sistema");
+        System.out.println("Digite 1 si es un alumno o 2 si es un Operario, 3 para cerrar sesion y 4 para salir del sistema : ");
         op1 = teclado.nextInt();
         if (op1 != 3 && op1 != 4) {
             String codigo;

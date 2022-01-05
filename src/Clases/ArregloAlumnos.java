@@ -97,7 +97,7 @@ public class ArregloAlumnos {
 
     @Override
     public String toString() {
-        return "ArregloAlumnos{" + "AlumnoA=" + Arrays.toString(AlumnoA) + ", indice=" + indice + '}';
+        return "\n"+ "\tAlumnos que pertenecen al arreglo"+ "\n" + Arrays.toString(AlumnoA)+ indice;
     }
 
 }

@@ -66,7 +66,12 @@ public class Operario extends Usuario {
 
     @Override
     public String toString() {
-        return "Operario{" + "entrada=" + entrada + "contraseña=" + this.getContraseña() + ", codigo=" + this.getCodigo() + ", apellidos=" + this.getApellidos() + ", nombres=" + this.getNobmres() + '}';
+        return "Operario{" + "\n"+
+                "entrada=" + entrada + "\n"+
+                "contraseña=" + this.getContraseña() + "\n"+
+                "codigo=" + this.getCodigo() + "\n"+
+                "apellidos=" + this.getApellidos() + "\n"+
+                "nombres=" + this.getNobmres() + '}';
     }
 
 }
