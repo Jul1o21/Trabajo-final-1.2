@@ -9,7 +9,7 @@ package Clases;
  *
  * @author cubas
  */
-class Alimento {
+public class Alimento {
     private String tipoalimento;
 
     public Alimento(String tipoalimento) {

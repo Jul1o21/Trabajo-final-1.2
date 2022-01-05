@@ -11,10 +11,11 @@ package Clases;
  */
 public class Sistema {
     private boolean estadohabilitado;
-    public static int racionestotalesporturno=20;
+    public static int racionestotalesporturno=5;
     private ArregloFecha fechasSistema;
     private ArregloTurno turnosSistema;
     private ArregloAlumnos alumnosRegistrados;
+    private CabeceraTicket ticketscreadosconfecha; 
     private Operario operario;
     
     public Sistema(boolean estadohabilitado, ArregloFecha fechasSistema, ArregloTurno turnosSistema, ArregloAlumnos alumnosRegistrados,Operario operario) {
@@ -23,6 +24,11 @@ public class Sistema {
         this.turnosSistema = turnosSistema;
         this.alumnosRegistrados = alumnosRegistrados;
         this.operario = operario;
+        this.ticketscreadosconfecha = null;
+    }
+
+    public void setTicketscreadosconfecha(CabeceraTicket ticketscreadosconfecha) {
+        this.ticketscreadosconfecha = ticketscreadosconfecha;
     }
     
     
@@ -44,8 +50,17 @@ public class Sistema {
         return racionestotalesporturno;
     }
     
-    
+    public void asignarticket(Alumno alumno){
+        
+        this.ticketscreadosconfecha.asignarticketalumno(alumno);
+        
+    }
 
+    public CabeceraTicket getTicketscreadosconfecha() {
+        return ticketscreadosconfecha;
+    }
+                
+                
     public void setEstadohabilitado(boolean estadohabilitado) {
         this.estadohabilitado = estadohabilitado;
     }

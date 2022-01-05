@@ -9,16 +9,16 @@ package Clases;
  *
  * @author cubas
  */
-class Nivel {
-    private String tiponivel;
+public class Nivel {
+    private int numeronivel;
 
-    public Nivel(String tiponivel) {
-        this.tiponivel = tiponivel;
+    public Nivel(int tiponivel) {
+        this.numeronivel = tiponivel;
     }
 
     @Override
     public String toString() {
-        return "Nivel{" + "tiponivel=" + tiponivel + '}';
+        return "Nivel{" + "tiponivel=" + numeronivel + '}';
     }
     
     

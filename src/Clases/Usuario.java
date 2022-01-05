@@ -56,6 +56,7 @@ public abstract class Usuario {
 
     
     public Alumno mostrarAlumno(String codigo, ArregloAlumnos alumnosRegistrados){
+        
      return alumnosRegistrados.devolveralumno(codigo);
     }
     

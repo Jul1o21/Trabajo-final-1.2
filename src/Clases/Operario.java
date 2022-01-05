@@ -37,6 +37,28 @@ public class Operario extends Usuario {
         this.entrada = entrada;
     }
     
+    public Fecha crearfechaparatickets(){ //Parte donde el operario crea la clase fecha
+        
+        Date fechadate;
+        fechadate = new Date();   
+        boolean estado=false;
+        if(fechadate.getHours()>7&&fechadate.getHours()<=8){
+               estado=true;        
+               System.out.println("Se le asigna true al estado de la fecha");
+        }
+
+        
+        Fecha fechacreada; //Clase 
+        fechacreada = new Fecha(fechadate, estado);       
+        System.out.println("Se creo la clase Fecha ");  
+        
+        System.out.println(fechacreada);
+        
+        
+        return fechacreada;
+        
+      
+    }
     public void RegistrarAlumno(Alumno alumno, ArregloAlumnos alumnos){
        
        alumnos.agregarAlumno(alumno);

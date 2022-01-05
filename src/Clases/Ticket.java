@@ -16,6 +16,8 @@ public class Ticket {
     private int stockalmuerzo;
     private EstadoTicket estado;
 
+    //
+
     public Ticket(Alumno alumno, int numeroticket, int contadorticket, int stockalmuerzo, EstadoTicket estado) {
         this.alumno = alumno;
         this.numeroticket = numeroticket;
@@ -26,6 +28,10 @@ public class Ticket {
 
     public Alumno getAlumno() {
         return alumno;
+    }
+
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
     }
 
     public int getNumeroticket() {
