@@ -10,25 +10,25 @@ package Clases;
  * @author cubas
  */
 public class Turno {
-    private int numeroturno;
-    private String intervalominutos;
+    private int numeroTurno;
+    private String intervaloMinutos;
 
     public Turno(int numeroturno, String intervalominutos) {
-        this.numeroturno = numeroturno;
-        this.intervalominutos = intervalominutos;
+        this.numeroTurno = numeroturno;
+        this.intervaloMinutos = intervalominutos;
     }
 
-    public int getNumeroturno() {
-        return numeroturno;
+    public int getNumeroTurno() {
+        return numeroTurno;
     }
 
-    public String getIntervalominutos() {
-        return intervalominutos;
+    public String getIntervaloMinutos() {
+        return intervaloMinutos;
     }
 
     @Override
     public String toString() {
-        return "Turno{" + "numeroturno=" + numeroturno + ", intervalominutos=" + intervalominutos + '}';
+        return "Turno{" + "numeroturno=" + numeroTurno + ", intervalominutos=" + intervaloMinutos + '}';
     }
     
     

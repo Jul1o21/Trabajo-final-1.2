@@ -10,13 +10,13 @@ package Clases;
  * @author cubas
  */
 public class EstadoTicket {
+
     private String estadoactual;
 
     public EstadoTicket(String estadoactual) {
         this.estadoactual = estadoactual;
     }
-    
-    
+
     public String getEstadoactual() {
         return estadoactual;
     }
@@ -29,7 +29,5 @@ public class EstadoTicket {
     public String toString() {
         return "EstadoTicket{" + "estadoactual=" + estadoactual + '}';
     }
-    
-    
-    
+
 }

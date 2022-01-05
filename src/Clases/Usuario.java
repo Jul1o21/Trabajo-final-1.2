@@ -10,10 +10,11 @@ package Clases;
  * @author cubas
  */
 public abstract class Usuario {
+
     protected String contrasena;
     protected String nombres;
     protected String apellidos;
-    protected String codigo; 
+    protected String codigo;
 
     public Usuario(String contrasena, String nombres, String apellidos, String codigo) {
         this.contrasena = contrasena;
@@ -26,9 +27,6 @@ public abstract class Usuario {
         this.contrasena = contrasena;
         this.codigo = codigo;
     }
-
-    
-    
 
     public String getContraseña() {
         return contrasena;
@@ -49,25 +47,19 @@ public abstract class Usuario {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
-    public boolean logearse(String contrasena,String codigo, ArregloAlumnos alumnosRegistrados){
-     return alumnosRegistrados.verificaralumno(contrasena,codigo);
+
+    public boolean logearse(String contrasena, String codigo, ArregloAlumnos alumnosRegistrados) {
+        return alumnosRegistrados.verificarAlumno(contrasena, codigo);
     }
 
-    
-    public Alumno mostrarAlumno(String codigo, ArregloAlumnos alumnosRegistrados){
-        
-     return alumnosRegistrados.devolveralumno(codigo);
+    public Alumno mostrarAlumno(String codigo, ArregloAlumnos alumnosRegistrados) {
+
+        return alumnosRegistrados.devolverAlumno(codigo);
     }
-    
-    
-    
+
     @Override
     public String toString() {
         return "Usuario{" + "contrasena=" + contrasena + ", nombres=" + nombres + ", apellidos=" + apellidos + ", codigo=" + codigo + '}';
     }
-
-    
-    
 
 }

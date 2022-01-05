@@ -12,31 +12,29 @@ import java.util.Arrays;
  * @author cubas
  */
 public class CabeceraTicket { //Arreglo de Tickets
-    
-    
+
     private Ticket TicketA[];
     private Nivel nivel;
     private Turno turno;
     private Alimento alimento;
     private Fecha fecha;
     private int indice;
-    private int canttickets=0;
-    
+    private int canttickets = 0;
+
     public CabeceraTicket(int canttickets, Nivel nivel, Turno turno, Alimento alimento, Fecha fecha) {
         this.indice = 0;
         this.TicketA = new Ticket[canttickets];
-        
-        for(int i=0;i<canttickets;i++){
+
+        for (int i = 0; i < canttickets; i++) {
             Ticket tickettemp;
             EstadoTicket estadotictemp;
             estadotictemp = new EstadoTicket("ticket disponible");
-            tickettemp = new Ticket(null, 20, 20, 20,estadotictemp);
-            this.TicketA[i]= tickettemp; 
+            tickettemp = new Ticket(null, 20, 20, 20, estadotictemp);
+            this.TicketA[i] = tickettemp;
             this.canttickets++;
-            
-            
+
         }
-            
+
         this.nivel = nivel;
         this.turno = turno;
         this.alimento = alimento;
@@ -56,13 +54,12 @@ public class CabeceraTicket { //Arreglo de Tickets
     }
 
     public void asignarticketalumno(Alumno alumno) {
-        
+
         //this.TicketA[3].setAlumno(alumno);
-        for(int i=0;i<TicketA.length;i++){
+        for (int i = 0; i < TicketA.length; i++) {
             this.TicketA[i].setAlumno(alumno);
         }
-            
-        
+
     }
 
     public Alimento getAlimento() {
@@ -72,13 +69,10 @@ public class CabeceraTicket { //Arreglo de Tickets
     public Fecha getFecha() {
         return fecha;
     }
-    
 
     @Override
     public String toString() {
         return "CabeceraTicket{" + "TicketA=" + Arrays.toString(TicketA) + ", nivel=" + nivel + ", turno=" + turno + ", alimento=" + alimento + ", fecha=" + fecha + '}';
     }
-    
-    
-         
+
 }

@@ -31,12 +31,12 @@ public class Alumno extends Usuario {
     }
   
   
-    public void SolicitarContraseña(){
+    public void solicitarContraseña(){
              System.out.println("--------------------------------------------");
              System.out.println("Su contraseña es : "+getContraseña());
              System.out.println("--------------------------------------------");
     }
-    public void CambiarContraseña(String nuevaContraseña){
+    public void cambiarContraseña(String nuevaContraseña){
               this.contrasena = nuevaContraseña;
     }
 

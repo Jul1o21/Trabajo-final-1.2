@@ -139,7 +139,7 @@ public class App {
 
                                 alumnoadd = new Alumno(DNIadd, correoadd, contrasenaadd, nombreadd, apellidosadd, codigoadd, facultadtest);
 
-                                operariotest.RegistrarAlumno(alumnoadd, alumnosRegistrados);
+                                operariotest.registrarAlumno(alumnoadd, alumnosRegistrados);
 
                                 break;
 
@@ -151,7 +151,7 @@ public class App {
                                 break;
                             case 4:
                                 Fecha fechagenerada;
-                                fechagenerada = operariotest.crearfechaparatickets();
+                                fechagenerada = operariotest.crearFechaParaTickets();
 
                                 System.out.println("Ingrese los datos de los tickets");
                                 int numeronivel,
@@ -253,7 +253,7 @@ public class App {
                     switch (opa) {  //Menu del alumno
                         case 1:
 
-                            sistema.asignarticket(alumnotest);
+                            sistema.asignarTicket(alumnotest);
 
                             System.out.println(sistema.getTicketscreadosconfecha());
 

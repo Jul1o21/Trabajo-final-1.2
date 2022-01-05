@@ -10,16 +10,16 @@ package Clases;
  * @author cubas
  */
 public class Alimento {
-    private String tipoalimento;
+    private String tipoAlimento;
 
-    public Alimento(String tipoalimento) {
-        this.tipoalimento = tipoalimento;
+    public Alimento(String tipoAlimento) {
+        this.tipoAlimento = tipoAlimento;
     }
     
     
     @Override
     public String toString() {
-        return "Alimento{" + "tipoalimento=" + tipoalimento + '}';
+        return "Alimento{" + "tipoalimento=" + tipoAlimento + '}';
     }
     
     
