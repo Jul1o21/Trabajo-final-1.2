@@ -73,7 +73,8 @@ public class App {
 
         //Menu para seleccionar si se trata de un usuario o un operario
         int op1;
-        System.out.println("Digite 1 si es un alumno o 2 si es un Operario, 3 para cerrar sesion y 4 para salir del sistema : ");
+        System.out.println("\tEscoja una Opción");
+        System.out.println(" 1.- Acceder como Alumno\n 2.- Acceder como Operario\n 3.- Cerrar Sesion\n 4.- Salir del Sistema");
         op1 = teclado.nextInt();
         if (op1 != 3 && op1 != 4) {
             String codigo;
