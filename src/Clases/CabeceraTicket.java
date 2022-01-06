@@ -54,11 +54,17 @@ public class CabeceraTicket { //Arreglo de Tickets
     }
 
     public void asignarticketalumno(Alumno alumno) {
-
+        boolean ticketasignado=false;
         //this.TicketA[3].setAlumno(alumno);
         for (int i = 0; i < TicketA.length; i++) {
-            this.TicketA[i].setAlumno(alumno);
+            if(this.TicketA[i].getAlumno()==null&&ticketasignado==false){
+                 this.TicketA[i].setAlumno(alumno);
+                 ticketasignado=true;
+            }
+            
+           
         }
+        
 
     }
 
