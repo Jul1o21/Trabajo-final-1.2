@@ -81,6 +81,7 @@ public class CabeceraTicket { //Arreglo de Tickets
     @Override
     public String toString() {
         return "\tArreglo de Tickets" +"\n"+"TicketA=" +"\n"+ Arrays.toString(TicketA) + "\n"+
+                "------------------------------------------------------------------------------------"+"\n"+
                 "nivel=" + nivel + "\n"+
                 "turno=" + turno + "\n"+
                 "alimento=" + alimento + "\n"+
