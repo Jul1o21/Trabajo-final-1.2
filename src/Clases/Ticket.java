@@ -56,7 +56,14 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" + "alumno=" + alumno + ", numeroticket=" + numeroticket + ", contadorticket=" + contadorticket + ", stockalmuerzo=" + stockalmuerzo + ", estado=" + estado + '}';
+        return "\n"+"---------------------------------------------------------"+
+                "\n"+"Ticket{" + "\n"+
+                "alumno=" + alumno + "\n"+
+                ", numeroticket=" + numeroticket + "\n"+ 
+                ", contadorticket=" + contadorticket + "\n"+
+                ", stockalmuerzo=" + stockalmuerzo + "\n"+
+                ", estado=" + estado + "\n"+
+                '}';
     }
 
 }
