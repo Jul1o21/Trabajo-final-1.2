@@ -73,11 +73,9 @@ public class App {
 
         //Menu para seleccionar si se trata de un usuario o un operario
         int op1;
-        
 
         do {
 
-            
             System.out.println("\tEscoja una Opción");
             System.out.println(" 1.- Acceder como Alumno\n 2.- Acceder como Operario\n 3.- Salir del Sistema");
 
@@ -102,95 +100,99 @@ public class App {
 
                         operariotest = operarioregistradounico;
 
-                        System.out.println("0.-Salir\n1.-Registrar un alumno\n2.-Validar un ticket\n3.-Cambiar las raciones por turno"
-                                + "\n4.-Crear una fecha para generar los tickets\n5.-Mostrar los alumnos registrados");
+                        do {
 
-                        op2 = teclado.nextInt();
-                        switch (op2) {
-                            case 1:
-                                System.out.println("Digite los datos del alumno a agregar,"
-                                        + "DNI,correo,contraseña,nombres,apellidos, y codigo la facultad por defecto es FISI:");
-                                //int DNI, String correo, String contrasena, String nombres, String apellidos, String codigo, Facultad facultad
-                                int DNIadd;
-                                String correoadd,
-                                 contrasenaadd,
-                                 nombreadd,
-                                 apellidosadd,
-                                 codigoadd;
-                                DNIadd = teclado.nextInt();
-                                correoadd = teclado.next();
-                                contrasenaadd = teclado.next();
-                                nombreadd = teclado.next();
-                                apellidosadd = teclado.next();
-                                codigoadd = teclado.next();
+                            System.out.println("0.-Cerrar sesion y volver al menu principal\n1.-Registrar un alumno\n2.-Validar un ticket\n3.-Cambiar las raciones por turno"
+                                    + "\n4.-Crear una fecha para generar los tickets\n5.-Mostrar los alumnos registrados");
 
-                                alumnoadd = new Alumno(DNIadd, correoadd, contrasenaadd, nombreadd, apellidosadd, codigoadd, facultadtest);
+                            op2 = teclado.nextInt();
+                            switch (op2) {
 
-                                operariotest.registrarAlumno(alumnoadd, alumnosRegistrados);
+                                case 1:
+                                    System.out.println("Digite los datos del alumno a agregar,"
+                                            + "DNI,correo,contraseña,nombres,apellidos, y codigo la facultad por defecto es FISI:");
+                                    //int DNI, String correo, String contrasena, String nombres, String apellidos, String codigo, Facultad facultad
+                                    int DNIadd;
+                                    String correoadd,
+                                     contrasenaadd,
+                                     nombreadd,
+                                     apellidosadd,
+                                     codigoadd;
+                                    DNIadd = teclado.nextInt();
+                                    correoadd = teclado.next();
+                                    contrasenaadd = teclado.next();
+                                    nombreadd = teclado.next();
+                                    apellidosadd = teclado.next();
+                                    codigoadd = teclado.next();
 
-                                break;
+                                    alumnoadd = new Alumno(DNIadd, correoadd, contrasenaadd, nombreadd, apellidosadd, codigoadd, facultadtest);
 
-                            case 2:
+                                    operariotest.registrarAlumno(alumnoadd, alumnosRegistrados);
 
-                                break;
-                            case 3:
+                                    break;
 
-                                break;
-                            case 4:
-                                Fecha fechagenerada;
-                                fechagenerada = operariotest.crearFechaParaTickets();
+                                case 2:
 
-                                System.out.println("Ingrese los datos de los tickets");
-                                int numeronivel,
-                                 numeroturno;
-                                String intervaloturno,
-                                 alimentoname;
+                                    break;
+                                case 3:
 
-                                Nivel nivel;
-                                Turno turno;
-                                Alimento alimento;
+                                    break;
+                                case 4:
+                                    Fecha fechagenerada;
+                                    fechagenerada = operariotest.crearFechaParaTickets();
 
-                                System.out.println("Digite el nivel:");
+                                    System.out.println("Ingrese los datos de los tickets");
+                                    int numeronivel,
+                                     numeroturno;
+                                    String intervaloturno,
+                                     alimentoname;
 
-                                numeronivel = teclado.nextInt();
-                                nivel = new Nivel(numeronivel);
+                                    Nivel nivel;
+                                    Turno turno;
+                                    Alimento alimento;
 
-                                System.out.println("Datos del turno:");
+                                    System.out.println("Digite el nivel:");
 
-                                System.out.println("  Ingrese el numero del turno:");
-                                numeroturno = teclado.nextInt();
-                                teclado.nextLine();
+                                    numeronivel = teclado.nextInt();
+                                    nivel = new Nivel(numeronivel);
 
-                                System.out.println("  Ingrese el intervalo del turno:");
-                                intervaloturno = teclado.nextLine();
+                                    System.out.println("Datos del turno:");
 
-                                turno = new Turno(numeroturno, intervaloturno);
+                                    System.out.println("  Ingrese el numero del turno:");
+                                    numeroturno = teclado.nextInt();
+                                    teclado.nextLine();
 
-                                System.out.println("Digite el alimento:");
+                                    System.out.println("  Ingrese el intervalo del turno:");
+                                    intervaloturno = teclado.nextLine();
 
-                                alimentoname = teclado.nextLine();
-                                alimento = new Alimento(alimentoname);
+                                    turno = new Turno(numeroturno, intervaloturno);
 
-                                CabeceraTicket ticketsgeneradosporop;
-                                // ticketsgeneradosporop = new CabeceraTicket(333, nivel, turno, alimento, fechagenerada);
-                                ticketsgeneradosporop = fechagenerada.creartickets(nivel, turno, alimento, fechagenerada);
+                                    System.out.println("Digite el alimento:");
 
-                                sistema.setTicketscreadosconfecha(ticketsgeneradosporop);
+                                    alimentoname = teclado.nextLine();
+                                    alimento = new Alimento(alimentoname);
 
-                                System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                System.out.println(ticketsgeneradosporop);
-                                System.out.println("\n----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                    CabeceraTicket ticketsgeneradosporop;
+                                    // ticketsgeneradosporop = new CabeceraTicket(333, nivel, turno, alimento, fechagenerada);
+                                    ticketsgeneradosporop = fechagenerada.creartickets(nivel, turno, alimento, fechagenerada);
 
-                                //CabeceraTicket(Sistema.racionestotalesporturno, nivel, turno, alimento, fecha); 
-                                break;
-                            case 5:
-                                System.out.println("Los alumnos que tiene el sistema son\n" + alumnosRegistrados);
-                                break;
-                            case 0:
-                                op1 = 3;
-                                break;
+                                    sistema.setTicketscreadosconfecha(ticketsgeneradosporop);
 
-                        }
+                                    System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                    System.out.println(ticketsgeneradosporop);
+                                    System.out.println("\n----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                                    //CabeceraTicket(Sistema.racionestotalesporturno, nivel, turno, alimento, fecha); 
+                                    break;
+                                case 5:
+                                    System.out.println("Los alumnos que tiene el sistema son\n" + alumnosRegistrados);
+                                    break;
+                                case 0:
+
+                                    break;
+
+                            }
+                        } while (op2 != 0);
 
                     } else {
                         System.out.println("Usted es un operario, y no esta registrado");
@@ -198,8 +200,6 @@ public class App {
                     }
 
                     break;
-
-               
 
                 case 3:
                     System.out.println("ADIOS");
@@ -219,40 +219,43 @@ public class App {
                     Alumno alumnotest; //La clase alumnotest, servira para crearse con un constructor que solo requiere contraseña  y codigo para poder usar el metodo que esta en usuario llamado logearse
 
                     alumnotest = new Alumno(contraseña, codigo);
-                    op1 = 0;
+
                     if (alumnotest.logearse(contraseña, codigo, sistema.getAlumnosRegistrados()) == true) {
 
                         System.out.println("Usted es un alumno, y si esta registrado");
-                        System.out.println("El alumno es: ");
 
-                        System.out.println(alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados()));
-                        alumnotest = alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados());
-                        System.out.println();
+                        do {
+                            System.out.println("El alumno es: ");
 
-                        System.out.println("0.-Cerrar sesion y volver al menu principal\n1.-Solicitar ticket\n");
-                        opa = teclado.nextInt();
-                        switch (opa) {  //Menu del alumno
-                            case 1:
+                            System.out.println(alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados()));
+                            alumnotest = alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados());
+                            System.out.println();
 
-                                sistema.asignarTicket(alumnotest);
+                            System.out.println("0.-Cerrar sesion y volver al menu principal\n1.-Solicitar ticket\n");
+                            opa = teclado.nextInt();
+                            switch (opa) {  //Menu del alumno
+                                case 1:
 
-                                System.out.println(sistema.getTicketscreadosconfecha());
+                                    sistema.asignarTicket(alumnotest);
 
-                                break;
+                                    System.out.println(sistema.getTicketscreadosconfecha());
 
-                            case 0:
-                                op1 = 3;
-                                break;
-                        }
+                                    break;
+
+                                case 0:
+
+                                    break;
+                            }
+                        } while (opa != 0);
                     } else {
                         System.out.println("Usted es un alumno, y no esta registrado");
                     }
-                    
+
                     break;
 
             }
 
-        } while (op1 != -5);
+        } while (op1 != 3);
 
     }
 

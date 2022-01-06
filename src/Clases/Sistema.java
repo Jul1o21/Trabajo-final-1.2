@@ -49,8 +49,13 @@ public class Sistema {
     }
 
     public void asignarTicket(Alumno alumno) {
-
-        this.ticketscreadosconfecha.asignarticketalumno(alumno);
+        if(this.ticketscreadosconfecha==null){
+            System.out.println("NO HAY TICKETS DISPONIBLES EN EL SISTEMA");
+        }
+        else {
+            this.ticketscreadosconfecha.asignarticketalumno(alumno);
+        }
+        
 
     }
 
