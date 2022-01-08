@@ -5,7 +5,18 @@
  */
 package App;
 
-import Clases.*;
+import modelo.ArregloAlumnos;
+import modelo.Operario;
+import modelo.Fecha;
+import modelo.CabeceraTicket;
+import modelo.Turno;
+import modelo.Alumno;
+import modelo.Nivel;
+import modelo.Alimento;
+import modelo.ArregloFecha;
+import modelo.ArregloTurno;
+import modelo.Sistema;
+import modelo.Facultad;
 import java.util.Date;
 import java.util.Scanner;
 

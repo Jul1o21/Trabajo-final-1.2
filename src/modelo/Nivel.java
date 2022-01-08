@@ -3,23 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Clases;
+package modelo;
 
 /**
  *
  * @author cubas
  */
-public class Alimento {
-    private String tipoAlimento;
+public class Nivel {
+    private int numeronivel;
 
-    public Alimento(String tipoAlimento) {
-        this.tipoAlimento = tipoAlimento;
+    public Nivel(int tiponivel) {
+        this.numeronivel = tiponivel;
     }
-    
-    
+
     @Override
     public String toString() {
-        return "Alimento{" + "tipoalimento=" + tipoAlimento + '}';
+        return "Nivel{" + "tiponivel=" + numeronivel + '}';
     }
     
     
