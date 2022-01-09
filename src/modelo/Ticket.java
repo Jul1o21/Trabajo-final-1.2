@@ -13,16 +13,14 @@ public class Ticket {
 
     private Alumno alumno;
     private int numeroticket;
-    private int contadorticket;
-    private int stockalmuerzo;
+    private int almuerzosdisp;
     private EstadoTicket estado;
 
     //
-    public Ticket(Alumno alumno, int numeroticket, int contadorticket, int stockalmuerzo, EstadoTicket estado) {
+    public Ticket(Alumno alumno, int numeroticket, int stockalmuerzo, EstadoTicket estado) {
         this.alumno = alumno;
         this.numeroticket = numeroticket;
-        this.contadorticket = contadorticket;
-        this.stockalmuerzo = stockalmuerzo;
+        this.almuerzosdisp = stockalmuerzo;
         this.estado = estado;
     }
 
@@ -38,12 +36,9 @@ public class Ticket {
         return numeroticket;
     }
 
-    public int getContadorticket() {
-        return contadorticket;
-    }
 
     public int getStockalmuerzo() {
-        return stockalmuerzo;
+        return almuerzosdisp;
     }
 
     public EstadoTicket getEstado() {
@@ -60,8 +55,7 @@ public class Ticket {
                 "\n"+"Ticket{" + "\n"+
                 "alumno=" + alumno + "\n"+
                 ", numeroticket=" + numeroticket + "\n"+ 
-                ", contadorticket=" + contadorticket + "\n"+
-                ", stockalmuerzo=" + stockalmuerzo + "\n"+
+                ", stockalmuerzo=" + almuerzosdisp + "\n"+
                 ", estado=" + estado + "\n"+
                 '}';
     }

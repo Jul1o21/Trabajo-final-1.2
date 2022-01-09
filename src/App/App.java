@@ -114,7 +114,7 @@ public class App {
                         do {
 
                             System.out.println("0.-Cerrar sesion y volver al menu principal\n1.-Registrar un alumno\n2.-Validar un ticket\n3.-Cambiar las raciones por turno"
-                                    + "\n4.-Crear una fecha para generar los tickets\n5.-Mostrar los alumnos registrados");
+                                    + "\n4.-Crear una fecha para generar los tickets\n5.-Mostrar los alumnos registrados\n6.-Mostrar todos los tickets");
 
                             op2 = teclado.nextInt();
                             switch (op2) {
@@ -206,7 +206,7 @@ public class App {
                         } while (op2 != 0);
 
                     } else {
-                        System.out.println("Usted es un operario, y no esta registrado");
+                        System.out.println("No esta registrado");
 
                     }
 
@@ -227,39 +227,57 @@ public class App {
                     System.out.println("------------------------------------------------");
                     int opa;
 
-                    Alumno alumnotest; //La clase alumnotest, servira para crearse con un constructor que solo requiere contraseña  y codigo para poder usar el metodo que esta en usuario llamado logearse
+                    Alumno alumnotest,
+                     alumnotemp; //La clase alumnotest, servira para crearse con un constructor que solo requiere contraseña  y codigo para poder usar el metodo que esta en usuario llamado logearse
 
                     alumnotest = new Alumno(contraseña, codigo);
 
                     if (alumnotest.logearse(contraseña, codigo, sistema.getAlumnosRegistrados()) == true) {
 
-                        System.out.println("Usted es un alumno, y si esta registrado");
+                        System.out.println("Si esta registrado");
 
                         do {
                             System.out.println("El alumno es: ");
 
-                            System.out.println(alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados()));
-                            alumnotest = alumnotest.mostrarAlumno(codigo, sistema.getAlumnosRegistrados());
-                            System.out.println();
-
-                            System.out.println("0.-Cerrar sesion y volver al menu principal\n1.-Solicitar ticket\n");
+                            alumnotemp = sistema.getAlumnosRegistrados().devolverAlumno(codigo);  //Esto devuelve el alumno que coincide con el codigo
+                            alumnotest = alumnotemp;
+                            System.out.println(alumnotest);
+                            System.out.println("\n0.-Cerrar sesion y volver al menu principal\n1.-Solicitar ticket\n2.-Cambiar contraseña\n3Mostrar sus datos");
                             opa = teclado.nextInt();
+                            
+                            System.out.println("El opa es: "+opa);
+                            
+                            
+                            
+                            
                             switch (opa) {  //Menu del alumno
                                 case 1:
-
                                     sistema.asignarTicket(alumnotest);
-
+                                    System.out.println("Alumno asignado");
                                     System.out.println(sistema.getTicketscreadosconfecha());
+                                    break;
+                                case 2:
+                                    String newcontra;
+                                    System.out.println("Digite su nueva contraseña");
+                                    newcontra = teclado.next();
+                                    alumnotest.setContrasena(newcontra);
 
                                     break;
+                                
+                                case 3:
+                                    System.out.println("Todos sus datos son:");
+                                    System.out.println(alumnotest);
+                                    break;
+                                case 4:
 
+                                    break;
                                 case 0:
 
                                     break;
                             }
                         } while (opa != 0);
                     } else {
-                        System.out.println("Usted es un alumno, y no esta registrado");
+                        System.out.println("No esta registrado");
                     }
 
                     break;

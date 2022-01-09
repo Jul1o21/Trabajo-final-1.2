@@ -51,7 +51,9 @@ public abstract class Usuario {
     public boolean logearse(String contrasena, String codigo, ArregloAlumnos alumnosRegistrados) {
         return alumnosRegistrados.verificarAlumno(contrasena, codigo);
     }
-
+    
+    
+    
     public Alumno mostrarAlumno(String codigo, ArregloAlumnos alumnosRegistrados) {
 
         return alumnosRegistrados.devolverAlumno(codigo);

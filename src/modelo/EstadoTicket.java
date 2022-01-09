@@ -24,7 +24,7 @@ public class EstadoTicket {
     public void setEstadoactual(String estadoactual) {
         this.estadoactual = estadoactual;
     }
-
+    
     @Override
     public String toString() {
         return "EstadoTicket{" + "estadoactual=" + estadoactual + '}';

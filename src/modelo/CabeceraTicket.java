@@ -18,18 +18,17 @@ public class CabeceraTicket { //Arreglo de Tickets
     private Turno turno;
     private Alimento alimento;
     private Fecha fecha;
-    private int indice;
-    private int canttickets = 0;
+    private int canttickets;
 
     public CabeceraTicket(int canttickets, Nivel nivel, Turno turno, Alimento alimento, Fecha fecha) {
-        this.indice = 0;
+        this.canttickets = 0;
         this.TicketA = new Ticket[canttickets];
-
+        
         for (int i = 0; i < canttickets; i++) {
             Ticket tickettemp;
             EstadoTicket estadotictemp;
             estadotictemp = new EstadoTicket("ticket disponible");
-            tickettemp = new Ticket(null, 20, 20, 20, estadotictemp);
+            tickettemp = new Ticket(null, this.canttickets+1,Sistema.racionestotalesporturno-this.canttickets-1, estadotictemp);
             this.TicketA[i] = tickettemp;
             this.canttickets++;
 
@@ -69,7 +68,21 @@ public class CabeceraTicket { //Arreglo de Tickets
         
 
     }
+    
+    public boolean validarticketcab(String codigo){
+        boolean result=false;
+        for (int i = 0; i < this.canttickets; i++) {     
+            if (this.TicketA[i].getAlumno().getCodigo().equals(codigo)==true) {
+                EstadoTicket estadoval;
+                estadoval = new EstadoTicket("validado");      
+                this.TicketA[i].setEstado(estadoval);
+                result = true;
+                break;
+            }
+        }
 
+        return result;
+    }
     public Alimento getAlimento() {
         return alimento;
     }

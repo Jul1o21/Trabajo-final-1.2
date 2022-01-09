@@ -52,7 +52,7 @@ public class Alumno extends Usuario {
     public String toString() {
         return "Alumno{"+"\n"+ "DNI=" + DNI + "\n"+ 
                 "correo=" + correo + "\n"+ 
-                "contraseña="+ this.getContraseña()+ "\n"+ 
+       //         "contraseña="+ this.getContraseña()+ "\n"+ 
                 "codigo=" + this.getCodigo() + "\n"+ 
                 "apellidos=" + this.getApellidos() + "\n"+ 
                 "nombres=" + this.getNobmres()+ "\n"+ 

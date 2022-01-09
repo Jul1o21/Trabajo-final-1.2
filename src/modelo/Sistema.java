@@ -18,6 +18,7 @@ public class Sistema {
     private ArregloAlumnos alumnosRegistrados;
     private CabeceraTicket ticketscreadosconfecha;
     private Operario operario;
+    private int indice;
 
     public Sistema(boolean estadohabilitado, ArregloFecha fechasSistema, ArregloTurno turnosSistema, ArregloAlumnos alumnosRegistrados, Operario operario) {
         this.estadohabilitado = estadohabilitado;
@@ -26,6 +27,7 @@ public class Sistema {
         this.alumnosRegistrados = alumnosRegistrados;
         this.operario = operario;
         this.ticketscreadosconfecha = null;
+        
     }
 
     public void setTicketscreadosconfecha(CabeceraTicket ticketscreadosconfecha) {

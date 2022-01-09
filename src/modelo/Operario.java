@@ -63,7 +63,12 @@ public class Operario extends Usuario {
         alumnos.agregarAlumno(alumno);
 
     }
-
+    
+    public void validarticketop(String codigo, CabeceraTicket Ticketsgenerados){
+        if(Ticketsgenerados.validarticketcab(codigo)==true){
+            System.out.println("Alumno validado y estado de ticket cambiado");
+        }
+    }
     @Override
     public String toString() {
         return "Operario{" + "\n"+
