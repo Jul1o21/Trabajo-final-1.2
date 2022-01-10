@@ -15,6 +15,7 @@ import modelo.Nivel;
 import modelo.Alimento;
 import modelo.ArregloFecha;
 import modelo.ArregloTurno;
+import modelo.ArregloCabeceras;
 import modelo.Sistema;
 import modelo.Facultad;
 import java.util.Date;
@@ -48,19 +49,19 @@ public class App {
         //Se crea el sistema
         //..............
         Sistema sistema;
-
+        
         //Se crean las clases que necesita el sistema, las cuales son: 
         ArregloFecha fechasSistema;
         ArregloTurno turnosSistema;
         ArregloAlumnos alumnosRegistrados;
-        CabeceraTicket ticketsdelsistema;
-        ticketsdelsistema = null;
+        ArregloCabeceras ticketsdetodoelsist;
         fechasSistema = new ArregloFecha();
         turnosSistema = new ArregloTurno();
         alumnosRegistrados = new ArregloAlumnos(3); //3 para probar el sistema
+  
         Operario operarioregistradounico; //Este operario sera el que este registrado de momento
         operarioregistradounico = new Operario(fechatest, "contraop", "nombreop", "appelidoop", "codigoop");
-
+        
         Alumno alumnoadd;//Esta clase alumnoadd sera para añadir los alumnos al arreglo de alumnos, que esta dentro de la clase sistema 
 
         alumnoadd = new Alumno(1111, "correo1", "contra1", "nombres1", "apellidos1", "codigo1", facultadtest);
@@ -74,14 +75,18 @@ public class App {
 
         //Terminamos de crear el sistema
         sistema = new Sistema(true, fechasSistema, turnosSistema, alumnosRegistrados, operarioregistradounico);
-
+        
         System.out.println("------------------------------------------------------------------------------------------------");
         System.out.println("\tLos alumnos que tiene el sistema son:\n" + alumnosRegistrados);
         System.out.println("************************************************************************************************");
         System.out.println("\tEl operario de este sistema es:\n" + operarioregistradounico);
         System.out.println("------------------------------------------------------------------------------------------------");
         //Ahora que ya creamos el sistema, con sus arreglos adentro, pasamos a la parte de logearse 
-
+        //Creamos una cabecera 
+        CabeceraTicket ticketstempcreados;
+        ticketstempcreados = null;
+        
+        
         //Menu para seleccionar si se trata de un usuario o un operario
         int op1;
 
@@ -89,7 +94,7 @@ public class App {
 
             System.out.println("\tEscoja una Opción");
             System.out.println(" 1.- Acceder como Alumno\n 2.- Acceder como Operario\n 3.- Salir del Sistema");
-
+            
             op1 = teclado.nextInt();
 
             switch (op1) {
@@ -103,12 +108,12 @@ public class App {
                     System.out.println("Ingrese su contraseña: ");
                     contraseña = teclado.next();
                     System.out.println("------------------------------------------------");
+
                     if (sistema.validarlogdeoperario(codigo, contraseña) == true) {
 
                         System.out.println("Usted es un operario, y si esta registrado");
                         int op2;
                         Operario operariotest;
-
                         operariotest = operarioregistradounico;
 
                         do {
@@ -143,7 +148,14 @@ public class App {
                                     break;
 
                                 case 2:
-
+                                    String codigoval;
+                                    
+                                    System.out.println("Ingrese el codigo del alumno a validar");
+                                    teclado.nextLine();
+                                    codigoval = teclado.nextLine(); 
+                                    
+                                    operariotest.validarticketop(codigoval, sistema.getTicketscreadosconfecha());
+                                    
                                     break;
                                 case 3:
 
@@ -201,6 +213,9 @@ public class App {
                                 case 0:
 
                                     break;
+                                case 6:
+                                    System.out.println(sistema.getTicketscreadosconfecha());
+                                    break;
 
                             }
                         } while (op2 != 0);
@@ -212,11 +227,10 @@ public class App {
 
                     break;
 
-                case 3:
-                    System.out.println("ADIOS");
-                    System.exit(0);
-                    break;
-
+                // case 3:
+                //     System.out.println("ADIOS");
+                //     System.exit(0);
+                //    break;
                 case 1: //Alumno
 
                     System.out.println("------------------------------------------------");
@@ -235,26 +249,25 @@ public class App {
                     if (alumnotest.logearse(contraseña, codigo, sistema.getAlumnosRegistrados()) == true) {
 
                         System.out.println("Si esta registrado");
-
+                        alumnotemp = sistema.getAlumnosRegistrados().devolverAlumno(codigo);  //Esto devuelve el alumno que coincide con el codigo
+                        alumnotest = alumnotemp;
+                        System.out.println("El alumno es: ");
+                        System.out.println(alumnotest);
                         do {
-                            System.out.println("El alumno es: ");
+                            
 
-                            alumnotemp = sistema.getAlumnosRegistrados().devolverAlumno(codigo);  //Esto devuelve el alumno que coincide con el codigo
-                            alumnotest = alumnotemp;
-                            System.out.println(alumnotest);
-                            System.out.println("\n0.-Cerrar sesion y volver al menu principal\n1.-Solicitar ticket\n2.-Cambiar contraseña\n3Mostrar sus datos");
+                            System.out.println("\n0.-Cerrar sesion y volver al menu principal\n1.-Solicitar ticket\n2.-Cambiar contraseña\n3.-Mostrar sus datos"
+                                    + "\n4.-Mostrar los tickets");
                             opa = teclado.nextInt();
-                            
-                            System.out.println("El opa es: "+opa);
-                            
-                            
-                            
-                            
+
+                          
+
                             switch (opa) {  //Menu del alumno
                                 case 1:
+
                                     sistema.asignarTicket(alumnotest);
                                     System.out.println("Alumno asignado");
-                                    System.out.println(sistema.getTicketscreadosconfecha());
+
                                     break;
                                 case 2:
                                     String newcontra;
@@ -263,13 +276,13 @@ public class App {
                                     alumnotest.setContrasena(newcontra);
 
                                     break;
-                                
+
                                 case 3:
                                     System.out.println("Todos sus datos son:");
                                     System.out.println(alumnotest);
                                     break;
                                 case 4:
-
+                                    System.out.println(sistema.getTicketscreadosconfecha());
                                     break;
                                 case 0:
 

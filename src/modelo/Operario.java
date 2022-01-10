@@ -43,7 +43,7 @@ public class Operario extends Usuario {
         Date fechadate;
         fechadate = new Date();
         boolean estado = false;
-        if (fechadate.getHours() > 7 && fechadate.getHours() <= 8) {
+        if (fechadate.getHours() >= Sistema.intervaloinferior && fechadate.getHours() <= Sistema.intervalosuperior) {
             estado = true;
             System.out.println("Se le asigna true al estado de la fecha");
         }
@@ -63,20 +63,20 @@ public class Operario extends Usuario {
         alumnos.agregarAlumno(alumno);
 
     }
-    
-    public void validarticketop(String codigo, CabeceraTicket Ticketsgenerados){
-        if(Ticketsgenerados.validarticketcab(codigo)==true){
-            System.out.println("Alumno validado y estado de ticket cambiado");
-        }
+
+    public void validarticketop(String codigo, ArregloCabeceras Ticketsgenerados) {
+        
+        Ticketsgenerados.validaralumnocabeceras(codigo);
     }
+
     @Override
     public String toString() {
-        return "Operario{" + "\n"+
-                "entrada=" + entrada + "\n"+
-                "contraseña=" + this.getContraseña() + "\n"+
-                "codigo=" + this.getCodigo() + "\n"+
-                "apellidos=" + this.getApellidos() + "\n"+
-                "nombres=" + this.getNobmres() + '}';
+        return "Operario{" + "\n"
+                + "entrada=" + entrada + "\n"
+                + "contraseña=" + this.getContraseña() + "\n"
+                + "codigo=" + this.getCodigo() + "\n"
+                + "apellidos=" + this.getApellidos() + "\n"
+                + "nombres=" + this.getNobmres() + '}';
     }
 
 }

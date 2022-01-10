@@ -59,7 +59,10 @@ public class CabeceraTicket { //Arreglo de Tickets
         
         for (int i = 0; i < TicketA.length; i++) {
             if(this.TicketA[i].getAlumno()==null&&ticketasignado==false){
+                EstadoTicket estadoalum;
+                 estadoalum = new EstadoTicket("con dueño");   
                  this.TicketA[i].setAlumno(alumno);
+                 this.TicketA[i].setEstado(estadoalum);
                  ticketasignado=true;
             }
             
@@ -71,15 +74,20 @@ public class CabeceraTicket { //Arreglo de Tickets
     
     public boolean validarticketcab(String codigo){
         boolean result=false;
-        for (int i = 0; i < this.canttickets; i++) {     
-            if (this.TicketA[i].getAlumno().getCodigo().equals(codigo)==true) {
+        System.out.println("Se entro al validar ticket");
+        
+        for (int i=0;i<this.canttickets;i++){
+        if(this.TicketA[i].getAlumno()!= null)   {
+            if (this.TicketA[i].getAlumno().getCodigo().equals(codigo)==true) {                            
                 EstadoTicket estadoval;
                 estadoval = new EstadoTicket("validado");      
                 this.TicketA[i].setEstado(estadoval);
                 result = true;
-                break;
+            }
             }
         }
+            
+        
 
         return result;
     }

@@ -12,26 +12,32 @@ package modelo;
 public class Sistema {
 
     private boolean estadohabilitado;
-    public static int racionestotalesporturno = 5;
+    public static int racionestotalesporturno = 3;
+    public static int turnospordia = 8;
+    public static int intervaloinferior=21;
+    public static int intervalosuperior=22;
     private ArregloFecha fechasSistema;
     private ArregloTurno turnosSistema;
     private ArregloAlumnos alumnosRegistrados;
-    private CabeceraTicket ticketscreadosconfecha;
+    private ArregloCabeceras cabecerascreadasconfecha;
     private Operario operario;
     private int indice;
 
     public Sistema(boolean estadohabilitado, ArregloFecha fechasSistema, ArregloTurno turnosSistema, ArregloAlumnos alumnosRegistrados, Operario operario) {
+        this.indice = 0;
         this.estadohabilitado = estadohabilitado;
         this.fechasSistema = fechasSistema;
         this.turnosSistema = turnosSistema;
         this.alumnosRegistrados = alumnosRegistrados;
         this.operario = operario;
-        this.ticketscreadosconfecha = null;
-        
+        this.cabecerascreadasconfecha = new ArregloCabeceras();
+
     }
 
     public void setTicketscreadosconfecha(CabeceraTicket ticketscreadosconfecha) {
-        this.ticketscreadosconfecha = ticketscreadosconfecha;
+        
+       this.cabecerascreadasconfecha.agregarticketscreadosconfecha(ticketscreadosconfecha);
+
     }
 
     public ArregloFecha getFechasSistema() {
@@ -41,28 +47,24 @@ public class Sistema {
     public ArregloTurno getTurnosSistema() {
         return turnosSistema;
     }
-
+    
     public ArregloAlumnos getAlumnosRegistrados() {
         return alumnosRegistrados;
     }
+
+   
 
     public static int getRacionestotalesporturno() {
         return racionestotalesporturno;
     }
 
     public void asignarTicket(Alumno alumno) {
-        if(this.ticketscreadosconfecha==null){
-            System.out.println("NO HAY TICKETS DISPONIBLES EN EL SISTEMA");
-        }
-        else {
-            this.ticketscreadosconfecha.asignarticketalumno(alumno);
-        }
-        
+        this.cabecerascreadasconfecha.asignarTicketCabeceras(alumno);
 
     }
 
-    public CabeceraTicket getTicketscreadosconfecha() {
-        return ticketscreadosconfecha;
+    public ArregloCabeceras getTicketscreadosconfecha() {
+        return cabecerascreadasconfecha;
     }
 
     public void setEstadohabilitado(boolean estadohabilitado) {
