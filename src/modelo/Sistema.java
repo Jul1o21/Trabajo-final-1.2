@@ -59,7 +59,12 @@ public class Sistema {
     }
 
     public void asignarTicket(Alumno alumno) {
-        this.cabecerascreadasconfecha.asignarTicketCabeceras(alumno);
+        if(this.cabecerascreadasconfecha.asignarTicketCabeceras(alumno)==true){
+            System.out.println("Se le asigno correctamente un ticket al alumno");
+        }
+        else{
+            System.out.println("No se le pudo asignar un ticket al alumno");
+        }
 
     }
 

@@ -158,7 +158,12 @@ public class App {
                                     
                                     break;
                                 case 3:
-
+                                    int newrac;
+                                    System.out.println("Las raciones por turnos son: "+Sistema.racionestotalesporturno);
+                                    System.out.println("Digite las nuevas raciones por turno:");
+                                    
+                                    newrac = teclado.nextInt();
+                                    
                                     break;
                                 case 4:
                                     Fecha fechagenerada;
@@ -266,7 +271,7 @@ public class App {
                                 case 1:
 
                                     sistema.asignarTicket(alumnotest);
-                                    System.out.println("Alumno asignado");
+                                    
 
                                     break;
                                 case 2:

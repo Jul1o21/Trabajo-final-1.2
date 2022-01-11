@@ -35,7 +35,8 @@ public class ArregloCabeceras {
 
     }
 
-    public void asignarTicketCabeceras(Alumno alumno) {
+    public boolean asignarTicketCabeceras(Alumno alumno) {
+        boolean result=false;
         if (this.cabeceras == null) {
             System.out.println("NO HAY TICKETS DISPONIBLES EN EL SISTEMA");
 
@@ -43,7 +44,7 @@ public class ArregloCabeceras {
            boolean verificar=false;
             for (int i = 0; i < Sistema.turnospordia; i++) {
                 if(this.cabeceras[i]!=null&&verificar==false){
-                    this.cabeceras[i].asignarticketalumno(alumno);
+                    result=this.cabeceras[i].asignarticketalumno(alumno);
                    
                     verificar=true;
                 }
@@ -51,6 +52,7 @@ public class ArregloCabeceras {
             }
 
         }
+        return result;
     }
 
     public void validaralumnocabeceras(String codigo) {

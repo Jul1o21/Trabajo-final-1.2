@@ -13,7 +13,7 @@ public class Alumno extends Usuario {
     private int DNI;
     private String correo;
     private Facultad facultad; 
-    
+    private boolean haveticket;
 
     public Alumno(int DNI, String correo, String contrasena, String nombres, String apellidos, String codigo, Facultad facultad) {
             
@@ -21,6 +21,7 @@ public class Alumno extends Usuario {
             this.DNI = DNI;
             this.correo = correo;
             this.facultad = facultad;
+            this.haveticket = false;
         
         
     }
@@ -46,6 +47,14 @@ public class Alumno extends Usuario {
 
     public String getCorreo() {
         return correo;
+    }
+
+    public void setHaveticket(boolean haveticket) {
+        this.haveticket = haveticket;
+    }
+
+    public boolean isHaveticket() {
+        return haveticket;
     }
     
     @Override
